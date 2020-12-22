@@ -14,22 +14,37 @@ class App extends Component {
   constructor(props){
     super(props);
 
+    this.props = props;
+
+     this.state = {products: []};
+
     //bind the E6 functions 
     this.loadData = this.loadData.bind(this);
-
+    this.productList = this.productList.bind(this);
     this.loadData();
   }
 
-
   //getting the data from the dbs and using it.
   loadData = () => {
-        http.getProducts().then(products => {   // after the promise is complete THEN call this OR error 
-        console.log(products);
-           
-        }, err =>{
 
-        });
-  }
+    var self = this; 
+    http.getProducts().then(data => {   // after the promise is complete THEN call this OR error 
+      self.setState({products: data})    // set state is going to update everything 
+    }, err =>{
+      
+    });
+  } 
+
+ productList = () => {
+     const list = this.state.products.map((product) => 
+       <div className="col-sm-4"  key={product._id} >
+       <Product title={product.title} price={product.price} imgUrl={product.imgUrl} />
+       </div>
+     );
+
+      return (list);
+ } 
+  
 
   render(){
     return (
@@ -38,7 +53,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <div className="container App-main" >
               <div className="row">
-              <Product price="5.12" title="Gun " imgUrl="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.indiamart.com%2Fproddetail%2Fsoft-bullet-toy-gun-17091725833.html&psig=AOvVaw2w8XOf--94xoXsIFXWHSxF&ust=1608637873407000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNi395mB3-0CFQAAAAAdAAAAABAD"/> 
+                {this.productList()}
               </div>              
           </div>   
         </header>
