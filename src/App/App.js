@@ -1,11 +1,13 @@
 import React, {Component} from  'react';
 import logo from './logo.svg';
 import './App.css';
+
+//Components  
+import WishList from '../wishlist/wishlist';
 import Product from '../product/product';
 
-
+//services
 import HttpService from '../services/http-service';
-import { render } from '@testing-library/react';
 
 const http = HttpService();    //LOCAL HOST NOT WORKING.
 
@@ -14,7 +16,6 @@ class App extends Component {
   constructor(props){
     super(props);
 
-    this.props = props;
 
      this.state = {products: []};
 
@@ -51,7 +52,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <div className="container App-main" >
+          <div className="container-fluid App-main" >
               <div className="row">
                 {this.productList()}
               </div>              
