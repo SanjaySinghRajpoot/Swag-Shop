@@ -12,10 +12,9 @@ import HttpService from "../services/http-service";
 const http = HttpService(); //LOCAL HOST NOT WORKING.
 
 class App extends Component {
-  constructor(props) {
-    
-    //error
-    super(props);
+ 
+  Constructor(props){  
+    super(props);  
 
     this.state = { products: [] };
 
@@ -30,7 +29,7 @@ class App extends Component {
     var self = this;
     http.getProducts().then(
       (data) => {
-        // after the promise is complete THEN call this OR error
+        // after the promise is coplete THEN call this OR error
         self.setState({ products: data }); // set state is going to update everything
       },
       (err) => {}
@@ -39,7 +38,7 @@ class App extends Component {
 
   productList = () => {
     const list = this.state.products.map((product) => (
-      <div className="col-sm-4" key={product._id}>
+      <div className="col-sm-3" key={product._id}>
         <Product
           title={product.title}
           price={product.price}
@@ -56,9 +55,22 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+
           <div className="container-fluid App-main">
-            <div className="row">{this.productList()}</div>
+            <div className="row">
+                <div className="col-sum-8">
+                  <div className="row">
+                     {this.productList()}
+                  </div>
+                </div>
+                 <div className="col-sm-4">
+                    <WishList />
+                 </div>
+            </div>
+            
+            
           </div>
+
         </header>
       </div>
     );
