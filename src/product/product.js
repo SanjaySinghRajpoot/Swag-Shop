@@ -9,7 +9,7 @@ class Product extends Component(){
                 <div className="card-block">
                     <h4 className="card-title" src={this.props.title}>  </h4>
                     <p className="card-text">Price: ${this.props.price}</p>
-                    <a href="#" className="btn btn-primary">Add to WishList. </a>
+                    <a href="#" className="btn btn-primary"> Add to WishList. </a>
 
                 </div>
             </div>

@@ -8,8 +8,6 @@ class WishList extends Component(){
                 <div className="card-block">
                     <h4 className="card-title" src={this.props.title}> Wish List </h4>
                     <ul className="list-group">
-                        
-                        
                     </ul>
 
                 </div>
