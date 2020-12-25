@@ -12,9 +12,8 @@ import HttpService from "../services/http-service";
 const http = HttpService(); //LOCAL HOST NOT WORKING.
 
 class App extends Component {
- 
-  Constructor(props){  
-    super(props);  
+  Constructor(props) {
+    super(props);
 
     this.state = { products: [] };
 
@@ -55,22 +54,16 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-
           <div className="container-fluid App-main">
             <div className="row">
-                <div className="col-sum-8">
-                  <div className="row">
-                     {this.productList()}
-                  </div>
-                </div>
-                 <div className="col-sm-4">
-                    <WishList />
-                 </div>
+              <div className="col-sum-8">
+                <div className="row">{this.productList()}</div>
+              </div>
+              <div className="col-sm-4">
+                <WishList />
+              </div>
             </div>
-            
-            
           </div>
-
         </header>
       </div>
     );

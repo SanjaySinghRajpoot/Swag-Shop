@@ -8,8 +8,19 @@ class WishList extends Component(){
    constructor (props){
        super(props);
 
-       this.state = {  }
-       //bind the function
+       this.state = {wishList:[
+              { 
+                title:"Christmas",
+                price:23.43,
+                _id:"sfdaser"
+             },
+             { 
+                title:"Toy!",
+                price:67.76,
+                _id:"sfdsdfas"
+             }
+        ]}
+       //bind the functio n
        this.createWishList = this.createWishList.bind(this);
    }
 
@@ -17,7 +28,7 @@ class WishList extends Component(){
     createWishList  = () => {
           const list = this.state.wishList.map((product) =>
 
-          <ProductCondensed product = {product} key={product_id} /> 
+          <ProductCondensed product = {product} key={product._id} /> 
           
           );
   
@@ -33,11 +44,10 @@ class WishList extends Component(){
                 <div className="card-block">
                     <h4 className="card-title" src={this.props.title}> Wish List </h4>
                     <ul className="list-group">
-
+                       {this.createWishList()}
                     </ul>
-
                 </div>
-            </div>
+            </div>~
         );
     }
 }
