@@ -27,17 +27,14 @@ class WishList extends Component(){
 
     createWishList  = () => {
           const list = this.state.wishList.map((product) =>
-
           <ProductCondensed product = {product} key={product._id} /> 
-          
           );
   
            return (list); 
 
     }
     
-    
-    
+
     render(){   // render= show on screen
         return(
             <div className="card">
@@ -47,7 +44,7 @@ class WishList extends Component(){
                        {this.createWishList()}
                     </ul>
                 </div>
-            </div>~
+            </div>
         );
     }
 }

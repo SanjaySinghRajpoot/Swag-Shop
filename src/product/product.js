@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './product.css';
 
-class Product extends Component(){
+class Product extends Component {
     render(){   // render= show on screen
         return(
             <div className="card Product">

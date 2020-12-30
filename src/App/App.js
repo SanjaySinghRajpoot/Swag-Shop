@@ -11,9 +11,11 @@ import HttpService from "../services/http-service";
 
 const http = HttpService(); //LOCAL HOST NOT WORKING.
 
-class App extends Component {
-  Constructor(props) {
+class App extends React.Component {
+  
+  constructor(props) {
     super(props);
+    this.state = {count: props.initialCount};
 
     this.state = { products: [] };
 
@@ -36,7 +38,7 @@ class App extends Component {
   };
 
   productList = () => {
-    const list = this.state.products.map((product) => (
+    const list = this.state.products.map((product) =>
       <div className="col-sm-3" key={product._id}>
         <Product
           title={product.title}
@@ -44,7 +46,7 @@ class App extends Component {
           imgUrl={product.imgUrl}
         />
       </div>
-    ));
+    );
 
     return list;
   };
