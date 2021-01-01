@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './wishlist.css';
 import ProductCondensed from '../product-condensed/product-condensed';
+import Notification from '../services/notification-service';
 
 
 class WishList extends Component(){
