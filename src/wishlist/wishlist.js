@@ -25,14 +25,11 @@ class WishList extends Component(){
        this.createWishList = this.createWishList.bind(this);
    }
 
-
     createWishList  = () => {
           const list = this.state.wishList.map((product) =>
           <ProductCondensed product = {product} key={product._id} /> 
           );
-  
            return (list); 
-
     }
     
 

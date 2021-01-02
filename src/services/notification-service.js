@@ -8,7 +8,6 @@ class NotificationService {
    constructor(){
         if(!instance){
            instance = this;
-
         }
         return instance;
    }
@@ -31,11 +30,9 @@ class NotificationService {
       let obs = observers[notifName];
       if(!obs){
           observers[notifName] = [];
-
       }
 
       let obj = {observer: observer, callBack: callBack};
       observers[notifName].push(obj);
-
   }
 }
