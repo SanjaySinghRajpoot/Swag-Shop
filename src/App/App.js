@@ -9,7 +9,7 @@ import Product from "../product/product";
 //services
 import HttpService from "../services/http-service";
 
-const http = HttpService(); //LOCAL HOST NOT WORKING.
+const http = HttpService();  //LOCAL HOST NOT WORKING.
 
 class App extends React.Component {
   
